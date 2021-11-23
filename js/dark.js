@@ -15,6 +15,7 @@ function darkMode() {
     var card11 = document.getElementById('card11');
     var card12 = document.getElementById('card12');
     var card13 = document.getElementById('card13');
+    var card14 = document.getElementById('card14');
 
     darkModeSwitch.addEventListener('change',() => {   
         document.body.classList.toggle('dark');
@@ -33,5 +34,6 @@ function darkMode() {
         card11.classList.toggle('card-dark');
         card12.classList.toggle('card-dark');
         card13.classList.toggle('card-dark');
+        card14.classList.toggle('card-dark');
     });
 }
