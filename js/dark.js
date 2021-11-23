@@ -19,7 +19,10 @@ function darkMode() {
 
     darkModeSwitch.addEventListener('change',() => {   
         document.body.classList.toggle('dark');
-        // document.body.card.classList.toggle('dark');
+        var theme = document.body.classList.contains('dark') ? 'dark' : 'light';
+        localStorage.setItem("theme", theme);
+        
+        // browser handles error when they are not defined but needs better error handling in future. Prefferably a more structured approach
         card0.classList.toggle('card-dark');
         card1.classList.toggle('card-dark');
         card2.classList.toggle('card-dark');
@@ -35,5 +38,17 @@ function darkMode() {
         card12.classList.toggle('card-dark');
         card13.classList.toggle('card-dark');
         card14.classList.toggle('card-dark');
+        
     });
+}
+
+function themeStatus() {
+    // if(currentTheme === null){
+    //     localStorage.setItem('theme', 'light');
+    // }
+    const darkModeSwitch = document.getElementById('checkbox');
+    var currentTheme = localStorage.getItem("theme");
+    if(currentTheme === 'dark'){
+        darkModeSwitch.click();
+    }
 }
